@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Blend.destroy_all
+
+Note.destroy_all
+
+10.times do
+  b = Blend.create(
+      name: Faker::Coffee.blend_name,
+      origin: Faker::Coffee.origin,
+      variety: Faker::Coffee.variety
+  )
+  Note.create(blend_id: b.id, body: Faker::Coffee.notes)
+end
