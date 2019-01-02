@@ -9,7 +9,7 @@ Blend.destroy_all
 
 Note.destroy_all
 
-10.times do
+20.times do
   b = Blend.create(
       name: Faker::Coffee.blend_name,
       origin: Faker::Coffee.origin,
