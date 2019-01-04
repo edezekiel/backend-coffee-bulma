@@ -11,6 +11,10 @@ class Api::V1::NotesController < ApplicationController
     render json: note, status: 201
   end
 
+  def show
+    render json: @note, status: 200
+  end
+
   def destroy
     noteId = @note.id
     @note.destroy
