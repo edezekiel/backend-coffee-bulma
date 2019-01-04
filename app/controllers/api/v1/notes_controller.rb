@@ -11,6 +11,12 @@ class Api::V1::NotesController < ApplicationController
     render json: note, status: 201
   end
 
+  def destroy
+    noteId = @note.id
+    @note.destroy
+    render json: {message:"Zap! Note deleted", noteId:noteId}
+  end
+
   private
   def note_params
     params.permit(:body, :blend_id)
